@@ -3,7 +3,7 @@ FROM ubuntu:bionic
 
 #install dependencies for PPR-Meta-tool
 #falls gpu vorhanden: pip install tensorflow-gpu==1.4.1  #GPU version
-RUN apt update && apt install -y python2.7 python-pip git unzip wget libxt6 && \
+RUN apt update && apt install -y procps python2.7 python-pip git unzip wget libxt6 && \
     git clone https://github.com/zhenchengfang/PPR-Meta.git && \
     pip install -U numpy h5py tensorflow keras==2.0.8 && \
     apt-get clean &&  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
